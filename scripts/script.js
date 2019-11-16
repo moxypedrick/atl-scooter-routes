@@ -20,7 +20,7 @@ var map = new mapboxgl.Map({
 var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline'];//, 'Proposed Bike Lanes'
  
 var popup = new mapboxgl.Popup({
-  closeButton: false,
+  closeButton: true,
   closeOnClick: false
   });
 
@@ -153,7 +153,7 @@ map.on('load', function() {
     'paint' : {
       'line-color': 'white',
       'line-opacity':0.0, 
-      'line-width' : 2
+      'line-width' : 3
     }
   })
 });
@@ -193,7 +193,6 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
   
   var link = document.createElement('a');
   link.href = '#';
-  link.className = 'active';
   link.textContent = id;
   
   link.onclick = function (e) {

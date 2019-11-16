@@ -1,8 +1,6 @@
 body {
   color:#404040;
   font: 300 15px/26px 'Roboto Slab', serif;
-  margin:0;
-  padding:0;
   -webkit-font-smoothing:antialised;
 }
 * {
@@ -52,16 +50,21 @@ box-sizing: border-box;
   #menu a.active:hover {
   background: #3074a4;
   }
+
+
 .mapboxgl-popup {
   max-width: 400px;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
+
+
 .sidebar {  
   position: fixed;
   width: 25vw;
-  height: 100vh;
+  height: 95vh;
   top: 100; 
   left: 0vw;
+  bottom: 10px;
   overflow: visible;
   background: #fff;
   border-right: 1px solid rgba(0, 0, 0, 0.25);
@@ -70,6 +73,116 @@ box-sizing: border-box;
 .pad2 {
   padding:5px;
 }
+
+
+.header1{
+  display: block;
+  border-bottom: 0px solid #eee;
+  text-decoration: none;
+}
+
+.logo-image{
+  height: 25vh;
+  max-width:23vw;
+}
+
+
+
+.listings {
+  height: 70vh;
+  overflow: auto;
+  padding-bottom: 10px;
+  padding-top:0px;
+}
+.listings .item {
+  display: block;
+  border-bottom: 5vh solid #eee;
+  padding: 10px;
+  text-decoration: none;
+}
+.listings .item:last-child { border-bottom: none; }
+.listings .item .title {
+  display: block;
+  color: #00acc8ff;
+  font-weight: 700;
+}
+.listings .item .title small { 
+  font-weight: 400;
+  }
+
+  
+  .listings .item.active .title,
+  .listings .item .title:hover { color: #00acc8ff; }
+  
+  .listings .item.active {
+    background-color: #f8f8f8;
+  }
+  
+
+  
+.map{
+  position:fixed;
+  padding:0px;
+  top: 100vh;
+  left: 25vw;
+  width: 75vw;
+  height: 100vh;
+  top:0;
+  bottom:0;
+}
+
+
+
+
+
+.foot2{
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+  width: 100vw;
+  height: 0vh;
+  background-color: #fff;
+  font: 300 'Roboto Slab', serif;
+  -webkit-transition: height .3s ease;
+  transition: height .3s ease; 
+  cursor: 
+}
+
+.foot1{
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+  width: 100vw;
+  height: 0vh;
+  background-color: #fff;
+  font: 300 'Roboto Slab', serif;
+  -webkit-transition: height .3s ease;
+  transition: height .3s ease; 
+}
+
+
+
+.instructions{
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 6vh;
+  font: 'Roboto Slab', serif;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color:#6cbe4cff;
+  cursor: pointer;
+
+  }
+  .active, .instructions:hover{
+    background-color:#555
+  }
+
+
+
+
+
 
 h1 {
   font-size: 22px;
@@ -97,15 +210,6 @@ h1 {
   background: #6cbe4cff;
 }
 
-.sidebar-foot-1 {  
-  font: 300 15px/26px 'Roboto Slab', serif;
-  position: fixed;
-  height: 0vh;
-  line-height:1.5;
-  top: 100;
-  overflow: visible;
-  border-left: 10px solid rgba(0, 0, 0, 0);
-}
 .left{
   left: 0vw;
   width: 66vw;
@@ -121,33 +225,6 @@ h1 {
   width: 100vw;
 }
 
-.listings-1 {
-  height: 45vh;
-  overflow: auto;
-  padding-bottom: 1px;
-}
-
-.listings-1 .item {
-  font: 300 'Roboto Slab', serif;
-  display: block;
-  border-bottom: 1px solid #eee;
-  padding: 1px;
-  text-decoration: none;
-  font-size:10pt;
-  line-height: 80%;
-  height: 25vh;
-}
-
-.map{
-  position:fixed;
-  padding:0px;
-  top: 100vh;
-  left: 25vw;
-  width: 75vw;
-  height: 100vh;
-  top:0;
-  bottom:0;
-}
 
 a {
   color: #404040;
@@ -158,33 +235,6 @@ a:hover {
   color: #101010;
 }
 
-.header1{
-  display: block;
-  border-bottom: 0px solid #eee;
-  text-decoration: none;
-}
-
-.listings {
-  height: 100%;
-  overflow: auto;
-  padding-bottom: 60px;
-  padding-top:0px;
-}
-.listings .item {
-  display: block;
-  border-bottom: 1px solid #eee;
-  padding: 10px;
-  text-decoration: none;
-}
-.listings .item:last-child { border-bottom: none; }
-.listings .item .title {
-  display: block;
-  color: #00acc8ff;
-  font-weight: 700;
-}
-.listings .item .title small { 
-  font-weight: 400;
-  }
 
 .small{
   display: block;
@@ -192,13 +242,6 @@ a:hover {
   font-size: 14px;
 }
 
-
-.listings .item.active .title,
-.listings .item .title:hover { color: #00acc8ff; }
-
-.listings .item.active {
-  background-color: #f8f8f8;
-}
 
 ::-webkit-scrollbar {
   width: 3px;
@@ -265,69 +308,30 @@ a:hover {
  .smaller-image{
     width: 10vw;
   }
-.logo-image{
-    width: 25vw;
-    max-width:350px;
-  }
-
-.logo-image2{
-    width: 25vw;
-    max-width:100px;
-  }
-
-.instructions{
-  display: block;
-  position: relative;
-  width: 100vw;
-  height: 6vh;
-  font: 'Roboto Slab', serif;
-  font-size: 18px;
-  text-align: center;
-  color: #fff;
-  background-color:#6cbe4cff;
-  cursor: pointer;
-
-  }
-  .active, .instructions:hover{
-    background-color:#555
-  }
-
-.foot2{
-  position: fixed;
-  bottom: 0px;
-  z-index: 1;
-  width: 100vw;
-  height: 0vh;
-  background-color: #fff;
-  font: 300 'Roboto Slab', serif;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease; 
-  cursor: 
-}
-
-.foot1{
-  position: fixed;
-  bottom: 0px;
-  z-index: 1;
-  width: 100vw;
-  height: 0vh;
-  background-color: #fff;
-  font: 300 'Roboto Slab', serif;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease; 
-}
 
 
 
-@media only screen and (max-width:680px) {
+
+
+
+
+
+
+
+@media only screen and (max-width:930px) {
  /* For mobile phones: */
+
+ .logo-image{
+  height: 10vh;
+  background-color: #fff;
+  
+}
   
  #menu {
     background: #fff;
     position: absolute;
     z-index: -1;
     top: 5vh;
-    left: 27vw;
     width: 120px
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.4);
@@ -338,10 +342,10 @@ a:hover {
     background: #fff;
     position: absolute;
     z-index: 1;
-    height: 4vh;
+    height: 24vh;
     width: 100vw;
-    border-radius: 6px;
-    border: 4px solid rgba(0,0,0,0.4);
+    border-radius: 1px;
+    border: 1px solid rgba(0,0,0,0.4);
     font-family: 'Open Sans', sans-serif;
   }
    
@@ -349,10 +353,10 @@ a:hover {
     font-size: 13px;
     color: #404040;
     display: block;
-    margin: 0;
-    padding: 0;
+    height: 6vh;
+    width: 95vw;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,0.25);
     text-align: center;
   }
    
@@ -363,15 +367,18 @@ a:hover {
   #menu2 a:hover {
   background-color: #f8f8f8;
   color: #404040;
+  width: 95vw;
   }
    
   #menu2 a.active {
   background-color: #3887be;
   color: #ffffff;
+  width: 95vw;
   }
    
   #menu2 a.active:hover {
   background: #3074a4;
+  width: 95vw;
   }
 
   .map, .sidebar {
@@ -384,15 +391,24 @@ a:hover {
   }
   .sidebar{
     top:60vh;
-    left:0vw;
     height:35vh;
     text-align: center;
+    background-color: #fff;
+  }
+  .listings{
+    height:20vh;
   }
 
   .header1{
   display: block;
   border-bottom: 1px solid #eee;
+
+  background-color: #ffffff;
   text-decoration: none;
+}
+
+.item{
+  height: 10vh;
 }
 
   
@@ -400,7 +416,7 @@ a:hover {
   position: fixed;
   bottom: 0px;
   z-index: 1;
-  width: 100vw;
+  width: 80vw;
   height: 6vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
@@ -412,13 +428,19 @@ a:hover {
   position: fixed;
   bottom: 0px;
   z-index: 1;
-  width: 100vw;
+  width: 80vw;
   height: 30vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
   -webkit-transition: height .3s ease;
   transition: height .3s ease; 
 }
+.instructions{
+  width: 95vw;
+  left: 0vw;
+}
+
+
 
 }
 
