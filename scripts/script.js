@@ -17,7 +17,7 @@ var map = new mapboxgl.Map({
 });
 
 
-var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes', 'Proposed Bike Lanes','Accelerated Plan for Safer Streets','Beltline','Scooter Trip Counts' ];
+var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline'];//, 'Proposed Bike Lanes'
  
 var popup = new mapboxgl.Popup({
   closeButton: false,
@@ -57,7 +57,8 @@ map.on('load', function() {
       },
     'paint' : {
       'line-color':'#5cb477',
-      'line-opacity':1.0 
+      'line-opacity':1.0 ,
+      'line-width' : 2
     }
   })
 
@@ -75,7 +76,8 @@ map.on('load', function() {
       },
     'paint' : {
       'line-color':'#3aaed8',
-      'line-opacity':1.0 
+      'line-opacity':1.0 ,
+      'line-width' : 2
     }
   })
 
@@ -97,7 +99,8 @@ map.on('load', function() {
     'paint' : {
       'line-color':'#e31a1c',
       'line-opacity':1.0,
-      'line-width' : 2
+      'line-width' : 2,
+      
     }
   })
 
@@ -115,7 +118,8 @@ map.on('load', function() {
       },
     'paint' : {
       'line-color':'#757575',
-      'line-opacity':1.0
+      'line-opacity':1.0,
+      'line-width' : 2
     }
   })
 
@@ -133,6 +137,7 @@ map.on('load', function() {
     'paint' : {
       'line-color':'#fdbf6f',
       'line-opacity':1.0, 
+      'line-width' : 2
     }
   })
 
@@ -159,7 +164,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
   
   var link = document.createElement('a');
   link.href = '#';
-  link.className = 'active';
+  //link.className = 'active';
   link.textContent = id;
   
   link.onclick = function (e) {
@@ -213,18 +218,17 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 }
 
 
-map.on('click','atlScooterCounts', function(e){
+map.on('click','Scooter Trip Counts', function(e){
   var features = map.queryRenderedFeatures(e.point);
   map.getCanvas().style.cursor = 'pointer';
   
 
   var description = e.features[0].properties.name;
   var count = e.features[0].properties.SctrCnt;
-
-
+  console.log(description);
   popup.setLngLat(e.lngLat)
   .setHTML("<p>Street Name: "+description+"</p>"+"<p>Scooter Count: "+count+"</p>")
-  .addTo(map);//
+  .addTo(map);
 })
 
 
