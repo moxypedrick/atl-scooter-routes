@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+   <!-- <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
     
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,105 +13,55 @@
     <title>Atlanta E-Scooter Trips</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css" type="text/css"/>
+    <style>
+    </style>  
 </head>
   <body>
     <div class="sidebar pad2">
       <div class="header1">
-        <img src="media/earthcraft logo w lockup@1000px.png" class="logo-image" alt="Icon of walkshed">
+        <img src="media/gt-logo-gold.png" class="logo-image" alt="gt-logo">
       </div>
 
       <div id='listings' class='listings'>
         <div class='item' id='listing-0'>
-          <a href='#' class='title'>Net Evapotranspiration (inches)</a>
-          <div id='netET'>Click map for ETP.</div>
-        </div>
+          <a href='#' class='title'>Description</a>
+          <div id='netET'>Over the course of 2 weeks, I programatically recorded the location of every 
+            idle scooter in the Atlanta Area. Using this data I created a database of unique origins and destinations
+            for each scooter at a 5 minute resolution. Using the origins and destinations I determined the best route between the two locaitons using the 
+            HERE.com bike routing API. Then I determined how many scooter trips would occur on each road segment in Atlanta. This map shows which roads have head
+            the most scooter use between October 16 and November 1, 2019. 
 
-        <div class='item' id='listing-1'>
-          <a href='#' class='title'>1-year, 24-hour Storm (inches)</a>
-          <div id='oneYear'>Click map for design storm.</div>
+            The planned and fast tracked light</div>
         </div>
-
-        <div class='item' id='listing-2'>
-          <a href='#' class='title'>Ecoregion</a>
-          <div id='ecoRegion'>Click map for Ecoregion.</div>
-        </div>
-
-        <div class='item' id='listing-3'>
-          <a href='#' class='title'>Jobs to Housing Balance</a>
-          <div id='jobs2housing'>Click map for ratio.</div>
-        </div>
-
       </div>
     </div>
-    <div id="map" class="map pad2"></div>   
-  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
-        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
-        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
-        
-        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
-        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css'/>
-        <script type="text/javascript" src='scripts/script.js'></script>
-
-  <div id="foot" class="foot2">
-    <div>
-      <button class="instructions" onClick="myFunction()">Instructions <i class="fa fa-navicon"></i></button>
-    </div>
-    <div class="sidebar-foot-1 whole">
-      <div class='listings'>
-        <div class='item'>
-          This map stores and visualizes ECC Site Review Data for project teams. Use it to determine the project's correct EcoRegion, Jobs-to-Housing Balance, and rainfall volumes to which to design the stormwater and irrigation system.
+    <nav id="menu"></nav>
+    <div id="map" class="map pad2"></div>    
+    <div id="foot" class="foot2">
+        <div>
+          <button class="instructions" onClick="myFunction()">Data Layers <i class="fa fa-navicon"></i></button>
         </div>
-
-        <div class='item'>
-          <a href='#' class='title'>
-            Generate Walkshed
-          </a>
-          <div class="icon">
-            <img src="media/ecc map walkshed icon-final.svg" class="logo-image2" alt="Icon of walkshed">
-            <p>To generate an ECC Walkshed, hold control key and click (for Macs command + click) on map - the area that one is able to walk to in 5 and 10 minutes will be bound by blue polygons. Use this to determine which nearyby amenities are walkable for residents in your ECC project.
-            </p>
-          </div>
-        </div>
-
-        <div class='item'>
-          <a href='#' class='title'>
-            View Site Review Data
-          </a>
-          <div><p>
-            Clicking mouse on map returns the Net ETP, 1-year, 24-hour storm, EcoRegion, and Jobs-to-Housing Balance. These data are used to inform EarthCraft designers on the strategies to be implemented in an EarthCraft Community.</p>
-            <ul>
-              <li>
-                <a href='#' class='title small'>
-                  Net Evapotranspiration
-                </a>
-                <p>The Net-Evapotranspiration is the amount of plant transpiration and evaporation that occurs in a specific ecoregion and climate. This number is used to calculate the baseline irrigation needs for landscaping.</p>
-              </li>
-              <li>
-                <a href='#' class='title small'>
-                  Ecoregion
-                </a>
-                <p>This map shows the Level III Ecoregions in the Georgia. The EcoRegion are areas which share the similar geography, topography, and ecosystem. Ecoregions inform the type of environmental protections which are required for ECC projects.</p>
-              </li>
-              <li>
-                <a href='#' class='title small'>
-                  Jobs-to-Housing Balance
-                </a>
-                <p>This is the ratio of number of jobs divided by number of housing units in the location's census tract. The desired ratio is 1.5, or 3 jobs for every 2 housing units ECC awards points if the new buildings will bring the ratio closer to 3:2.</p>
-              </li>
-            </ul>
-          </div>
-      </div>
+        <nav id="menu2"></nav>
     </div>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+          <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+          <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+          
+          <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
+          <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css'/>
+          <script type="text/javascript" src='scripts/script.js'></script>
+    <script>
+      function myFunction(){
+        if(document.getElementById("foot").className === "foot2") {
+          document.getElementById("foot").className = "foot1";
+          } else {
+            document.getElementById("foot").className = "foot2";
+          }
+      };
+    </script>
   </div>
-  <script>
-function myFunction(){
-  if(document.getElementById("foot").className === "foot2") {
-    document.getElementById("foot").className = "foot1";
-    } else {
-      document.getElementById("foot").className = "foot2";
-    }
-};
-</script>
-  </div>
-  </body>
+</body>
 </html>
+
+
+ 

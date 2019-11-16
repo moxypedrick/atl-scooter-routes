@@ -11,10 +11,55 @@ body {
 box-sizing: border-box;
 }
 
+  #menu {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 27vw;
+    width: 120px
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.4);
+    font-family: 'Open Sans', sans-serif;
+  }
+   
+  #menu a {
+    font-size: 13px;
+    color: #404040;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    text-align: center;
+  }
+   
+  #menu a:last-child {
+    border: none;
+  }
+   
+  #menu a:hover {
+  background-color: #f8f8f8;
+  color: #404040;
+  }
+   
+  #menu a.active {
+  background-color: #3887be;
+  color: #ffffff;
+  }
+   
+  #menu a.active:hover {
+  background: #3074a4;
+  }
+.mapboxgl-popup {
+  max-width: 400px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  }
 .sidebar {  
   position: fixed;
   width: 25vw;
-  height: 90vh;
+  height: 100vh;
   top: 100; 
   left: 0vw;
   overflow: visible;
@@ -55,7 +100,7 @@ h1 {
 .sidebar-foot-1 {  
   font: 300 15px/26px 'Roboto Slab', serif;
   position: fixed;
-  height: 35vh;
+  height: 0vh;
   line-height:1.5;
   top: 100;
   overflow: visible;
@@ -99,7 +144,7 @@ h1 {
   top: 100vh;
   left: 25vw;
   width: 75vw;
-  height: 94vh;
+  height: 100vh;
   top:0;
   bottom:0;
 }
@@ -252,7 +297,7 @@ a:hover {
   bottom: 0px;
   z-index: 1;
   width: 100vw;
-  height: 35vh;
+  height: 0vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
   -webkit-transition: height .3s ease;
@@ -265,7 +310,7 @@ a:hover {
   bottom: 0px;
   z-index: 1;
   width: 100vw;
-  height: 6vh;
+  height: 0vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
   -webkit-transition: height .3s ease;
@@ -275,7 +320,60 @@ a:hover {
 
 
 @media only screen and (max-width:680px) {
-  /* For mobile phones: */
+ /* For mobile phones: */
+  
+ #menu {
+    background: #fff;
+    position: absolute;
+    z-index: -1;
+    top: 5vh;
+    left: 27vw;
+    width: 120px
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.4);
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #menu2 {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    height: 4vh;
+    width: 100vw;
+    border-radius: 6px;
+    border: 4px solid rgba(0,0,0,0.4);
+    font-family: 'Open Sans', sans-serif;
+  }
+   
+  #menu2 a {
+    font-size: 13px;
+    color: #404040;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    text-align: center;
+  }
+   
+  #menu2 a:last-child {
+    border: none;
+  }
+   
+  #menu2 a:hover {
+  background-color: #f8f8f8;
+  color: #404040;
+  }
+   
+  #menu2 a.active {
+  background-color: #3887be;
+  color: #ffffff;
+  }
+   
+  #menu2 a.active:hover {
+  background: #3074a4;
+  }
+
   .map, .sidebar {
     width:100vw;
   }
@@ -303,7 +401,7 @@ a:hover {
   bottom: 0px;
   z-index: 1;
   width: 100vw;
-  height: 45vh;
+  height: 6vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
   -webkit-transition: height .3s ease;
@@ -315,7 +413,7 @@ a:hover {
   bottom: 0px;
   z-index: 1;
   width: 100vw;
-  height: 6vh;
+  height: 30vh;
   background-color: #fff;
   font: 300 'Roboto Slab', serif;
   -webkit-transition: height .3s ease;
