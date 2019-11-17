@@ -9,6 +9,11 @@ body {
 box-sizing: border-box;
 }
 
+h2 {
+  margin: 10px;
+  font-size: .8em;
+}
+
   #menu {
     background: #fff;
     position: absolute;
@@ -89,7 +94,7 @@ box-sizing: border-box;
 
 
 .listings {
-  height: 70vh;
+  height: 50vh;
   overflow: auto;
   padding-bottom: 10px;
   padding-top:0px;
@@ -116,6 +121,56 @@ box-sizing: border-box;
   
   .listings .item.active {
     background-color: #f8f8f8;
+  }
+  
+
+
+  .map-overlay {
+    position: absolute;
+    top: 75vh;
+    width: 25vw;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    overflow: visible;
+    border-radius: 3px;
+  }
+  
+  
+  #legend {
+    padding: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 18px;
+    height: 25vh;
+    margin-bottom: 10px;
+    width: 25vw;
+  }
+  
+  .legend-key {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    font: 300 'Roboto Slab', serif;
+  }
+  .legend-key2 {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    font: 300 'Roboto Slab', serif;
+  }
+  
+  .legend-feature{
+    width: 25vw;
+
+  }
+  #features {
+    top: 0;
+    height: 100px;
+    margin-top: 20px;
+    width: 25vw;
   }
   
 
@@ -171,7 +226,7 @@ box-sizing: border-box;
   font-size: 18px;
   text-align: center;
   color: #fff;
-  background-color:#6cbe4cff;
+  background-color:#B3A369;
   cursor: pointer;
 
   }
@@ -320,6 +375,43 @@ a:hover {
 
 @media only screen and (max-width:930px) {
  /* For mobile phones: */
+ 
+ .map-overlay {
+  position: absolute;
+  top: 75vh;
+  width: 25vw;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: Arial, sans-serif;
+  overflow: visible;
+  border-radius: 3px;
+}
+
+
+#legend {
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 180px;
+  margin-bottom: 40px;
+  width: 200px;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 20%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  font: 300 'Roboto Slab', serif;
+}
+
+#features {
+  top: 0;
+  height: 100px;
+  margin-top: 20px;
+  width: 25vw;
+}
+
 
  .logo-image{
   height: 10vh;

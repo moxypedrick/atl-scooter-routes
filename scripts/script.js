@@ -44,6 +44,26 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
 map.on('load', function() {
 
+  var layers2 = ['1-120', '120-410', '410-840', '840-1500', '1500-3000'];
+  var colors = ['#1b9842', '#a4d869', '#ffffc2', '#fdb062', '#d7191c'];
+  
+  for (i = 0; i < layers2.length; i++) {
+    var layer = layers2[i];
+    var color = colors[i];
+    var item = document.createElement('div');
+    var key = document.createElement('span');
+    key.className = 'legend-key';
+    item.className = 'legend-feature';
+    key.style.backgroundColor = color;
+    
+  
+    var value = document.createElement('span');
+    value.innerHTML = layer;
+    item.appendChild(key);
+    item.appendChild(value);
+    legend.appendChild(item);
+  }
+
   map.addSource('Beltline', {
     'type' : 'geojson',
     'data' : 'data/BeltLine.json' 
@@ -80,9 +100,6 @@ map.on('load', function() {
       'line-width' : 2
     }
   })
-
-  
-
 
 
   map.addSource('Proposed Bike Lanes', {
@@ -158,15 +175,35 @@ map.on('load', function() {
   })
 });
 
+var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline'];//, 'Proposed Bike Lanes'
+ 
+var link = document.createElement('a');
+link.textContent = 'Layers';
+var layers = document.getElementById('menu');
+layers.appendChild(link);
+
+var colors = ['#fdbf6f', '#757575', '#3aaed8', '#5cb477'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
-  var id = toggleableLayerIds[i];
+ 
+  
+  var id = toggleableLayerIds[i]; 
   
   var link = document.createElement('a');
   link.href = '#';
-  //link.className = 'active';
   link.textContent = id;
+ 
+
+
+  var color = colors[i];
+  var key = document.createElement('span');
+  key.className = 'legend-key2';
+  key.style.backgroundColor = color;
+  link.appendChild(key);
   
+
+
+
   link.onclick = function (e) {
     var clickedLayer = this.textContent;
     e.preventDefault();
@@ -194,6 +231,11 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
   var link = document.createElement('a');
   link.href = '#';
   link.textContent = id;
+  var color = colors[i];
+  var key = document.createElement('span');
+  key.className = 'legend-key2';
+  key.style.backgroundColor = color;
+  link.appendChild(key);
   
   link.onclick = function (e) {
     var clickedLayer = this.textContent;
