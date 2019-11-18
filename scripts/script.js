@@ -44,7 +44,7 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
 map.on('load', function() {
 
-  var layers2 = ['1-120', '120-410', '410-840', '840-1500', '1500-3000'];
+  var layers2 = ['1-120 trips', '120-410 trips', '410-840 trips', '840-1500 trips', '1500-3000 trips'];
   var colors = ['#1b9842', '#a4d869', '#ffffc2', '#fdb062', '#d7191c'];
   
   for (i = 0; i < layers2.length; i++) {
@@ -59,9 +59,28 @@ map.on('load', function() {
   
     var value = document.createElement('span');
     value.innerHTML = layer;
+    value.className= 'legend-words'
     item.appendChild(key);
     item.appendChild(value);
     legend.appendChild(item);
+  }
+
+  for (i = 0; i < layers2.length; i++) {
+    var layer = layers2[i];
+    var color = colors[i];
+    var item = document.createElement('div');
+    var key = document.createElement('span');
+    key.className = 'legend-key';
+    item.className = 'legend-feature';
+    key.style.backgroundColor = color;
+    
+  
+    var value = document.createElement('span');
+    value.innerHTML = layer;
+    value.className= 'legend-words'
+    item.appendChild(key);
+    item.appendChild(value);
+    legend2.appendChild(item);
   }
 
   map.addSource('Beltline', {

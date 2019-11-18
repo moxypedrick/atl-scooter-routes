@@ -87,8 +87,7 @@ h2 {
 }
 
 .logo-image{
-  height: 25vh;
-  max-width:23vw;
+  width:23vw;
 }
 
 
@@ -96,13 +95,13 @@ h2 {
 .listings {
   height: 50vh;
   overflow: auto;
-  padding-bottom: 10px;
   padding-top:0px;
+  background-color: #ffffff;
 }
 .listings .item {
   display: block;
-  border-bottom: 5vh solid #eee;
-  padding: 10px;
+  border-bottom: 5vh solid #ffffff;
+  /*padding: 10px;*/
   text-decoration: none;
 }
 .listings .item:last-child { border-bottom: none; }
@@ -127,10 +126,11 @@ h2 {
 
   .map-overlay {
     position: absolute;
-    top: 75vh;
+    top: 63vh;
+    height: 37vh;
     width: 25vw;
     background: rgba(255, 255, 255, 0.8);
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     overflow: visible;
     border-radius: 3px;
   }
@@ -366,7 +366,16 @@ a:hover {
 
 
 
-
+  .map-overlay2{
+    position: absolute;
+    top: 100vh;
+    width: 25vw;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    overflow: visible;
+    border-radius: 3px;
+  
+  }
 
 
 
@@ -378,44 +387,56 @@ a:hover {
  
  .map-overlay {
   position: absolute;
-  top: 75vh;
+  top: 100vh;
   width: 25vw;
   background: rgba(255, 255, 255, 0.8);
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   overflow: visible;
   border-radius: 3px;
 }
 
+.map-overlay2{
+  position: absolute;
+  top: 2vh;
+  width: 30vw;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: 'Open Sans', sans-serif;
+  overflow: visible;
+  border-radius: 3px;
+  line-height: 20px;
 
-#legend {
-  padding: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  line-height: 18px;
-  height: 180px;
-  margin-bottom: 40px;
-  width: 200px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 1;
+  font-weight: 400;
+  padding: 1px 1px;
 }
 
 .legend-key {
-  display: inline-block;
-  border-radius: 20%;
   width: 10px;
-  height: 10px;
-  margin-right: 5px;
+  height: 20px;
+  position: absolute;
+  left: 1vw;
+}
+
+.legend-words {
   font: 300 'Roboto Slab', serif;
+  font-size: 14px;
+  left: 5vw;
+  position: relative;
 }
 
-#features {
-  top: 0;
-  height: 100px;
-  margin-top: 20px;
+
+.legend-feature{
   width: 25vw;
+
 }
-
-
  .logo-image{
-  height: 10vh;
+  height: 5vh;
   background-color: #fff;
+  
   
 }
   
@@ -423,7 +444,7 @@ a:hover {
     background: #fff;
     position: absolute;
     z-index: -1;
-    top: 5vh;
+    top: 100vh;
     width: 120px
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.4);
@@ -477,24 +498,25 @@ a:hover {
     width:100vw;
   }
   .map{
-    height:60vh;
+    height:70vh;
     top:0vh;
     left: 0vw;
   }
   .sidebar{
-    top:60vh;
-    height:35vh;
+    top:70vh;
+    height:20vh;
     text-align: center;
     background-color: #fff;
   }
   .listings{
-    height:20vh;
+    height:15vh;
   }
 
   .header1{
   display: block;
+  /*position: absolute;*/
   border-bottom: 1px solid #eee;
-
+  /*right: 0px;*/
   background-color: #ffffff;
   text-decoration: none;
 }
