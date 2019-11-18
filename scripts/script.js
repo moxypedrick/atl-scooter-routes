@@ -44,7 +44,7 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
 map.on('load', function() {
 
-  var layers2 = ['1-120 trips', '120-410 trips', '410-840 trips', '840-1500 trips', '1500-3000 trips'];
+  var layers2 = ['1 - 120 trips', '120 - 410 trips', '410 - 840 trips', '840 - 1500 trips', '1500 - 3000 trips'];
   var colors = ['#1b9842', '#a4d869', '#ffffc2', '#fdb062', '#d7191c'];
   
   for (i = 0; i < layers2.length; i++) {
