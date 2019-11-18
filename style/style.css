@@ -204,7 +204,7 @@ h2 {
 .foot2{
   position: fixed;
   bottom: 0px;
-  z-index: 1;
+  z-index: -1;
   width: 100vw;
   height: 0vh;
   background-color: #fff;
@@ -378,9 +378,10 @@ a:hover {
 
 
   .map-overlay2{
-    position: absolute;
-    top: 100vh;
-    width: 25vw;
+    position: fixed;
+    top: 50vh;
+    width: 20vw;
+    z-index: -1;
     background: rgba(255, 255, 255, 0.8);
     font-family: 'Open Sans', sans-serif;
     overflow: visible;
@@ -398,8 +399,9 @@ a:hover {
  
  .map-overlay {
   position: absolute;
-  top: 100vh;
+  top: 2vh;
   width: 25vw;
+  z-index: -1;
   background: rgba(255, 255, 255, 0.8);
   font-family: 'Open Sans', sans-serif;
   overflow: visible;
@@ -407,9 +409,10 @@ a:hover {
 }
 
 .map-overlay2{
-  position: absolute;
+  position: fixed;
   top: 2vh;
   width: 30vw;
+  z-index: 1;
   background: rgba(255, 255, 255, 0.8);
   font-family: 'Open Sans', sans-serif;
   overflow: visible;
@@ -442,6 +445,7 @@ h1 {
 
 .legend-feature{
   width: 25vw;
+  
 
 }
  .logo-image{
@@ -453,7 +457,7 @@ h1 {
   
  #menu {
     background: #fff;
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 100vh;
     width: 120px
@@ -520,7 +524,7 @@ h1 {
     background-color: #fff;
   }
   .listings{
-    height:15vh;
+    height:17.5vh;
   }
 
   .header1{
@@ -533,7 +537,7 @@ h1 {
 }
 
 .item{
-  height: 10vh;
+  height: 15vh;
 }
 
   
