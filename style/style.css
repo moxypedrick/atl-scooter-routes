@@ -82,7 +82,6 @@ h2 {
 
 .header1{
   display: block;
-  border-bottom: 0px solid #eee;
   text-decoration: none;
 }
 
@@ -127,12 +126,11 @@ h2 {
   .map-overlay {
     position: absolute;
     top: 70vh;
-    height: 37vh;
-    width: 23vw;
+    height: 33vh;
+    width: 20vw;
     background: rgba(255, 255, 255, 0.8);
     font-family: 'Open Sans', sans-serif;
     overflow: visible;
-    border-radius: 3px;
     line-height: 20px;
   }
   
@@ -141,9 +139,9 @@ h2 {
     padding: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
-    height: 25vh;
+    height: 22vh;
     margin-bottom: 10px;
-    width: 25vw;
+    width: 20vw;
   }
   
   .legend-key {
@@ -271,7 +269,6 @@ h1 {
 }
 
 .heading {
-  border-box: 10 px solid #000;
   line-height: 20px;
   background: #6cbe4cff;
 }
