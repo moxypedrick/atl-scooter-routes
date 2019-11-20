@@ -410,6 +410,7 @@ a:hover {
   position: absolute;
   left: 25vw;
   top: 65vh;
+  bottom: 70vh;
   z-index: 1;
   background: #fff;
   

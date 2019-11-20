@@ -196,19 +196,6 @@ map.on('load', function() {
 });
 
 
-var layerList = document.getElementById('toggle');
-var inputs = layerList.getElementsByTagName('input');
- 
-function switchLayer(layer) {
-  var layerId = layer.target.id;
-  console.log(layerId);
-  map.setStyle('mapbox://styles/moxyped/' + layerId);
- }
- 
-for (var i = 0; i < inputs.length; i++) {
-  inputs[i].onclick = switchLayer;
-  
-}
 
 var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline', 'Proposed Bike Lanes'];//
  
