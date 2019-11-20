@@ -1,7 +1,7 @@
 (function(){
 
 var bounds = [
-  [-84.592237, 33.549660],
+  [-84.648416, 33.545977],
     [-84.145166, 33.984207]     
   ];
 
@@ -17,7 +17,7 @@ var map = new mapboxgl.Map({
 });
 
 
-var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline'];//, 'Proposed Bike Lanes'
+var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline', 'Proposed Bike Lanes'];
  
 var popup = new mapboxgl.Popup({
   closeButton: true,
@@ -42,10 +42,11 @@ scale.setUnit('imperial');
 map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
 
+
 map.on('load', function() {
 
   var layers2 = ['1 - 120 trips', '120 - 410 trips', '410 - 840 trips', '840 - 1500 trips', '1500 - 3000 trips'];
-  var colors = ['#1b9842', '#a4d869', '#ffffc2', '#fdb062', '#d7191c'];
+  var colors = ['#1b9842', '#a4d869', '#ffffc2', '#fdb062', '#d7191c', '#f78764'];
   
   for (i = 0; i < layers2.length; i++) {
     var layer = layers2[i];
@@ -95,7 +96,7 @@ map.on('load', function() {
       'visibility': 'none'
       },
     'paint' : {
-      'line-color':'#5cb477',
+      'line-color':'#373d20',
       'line-opacity':1.0 ,
       'line-width' : 2
     }
@@ -114,9 +115,9 @@ map.on('load', function() {
       'visibility': 'none'
       },
     'paint' : {
-      'line-color':'#3aaed8',
+      'line-color':'#f6f7f5',
       'line-opacity':1.0 ,
-      'line-width' : 2
+      'line-width' : 2.5
     }
   })
 
@@ -133,7 +134,7 @@ map.on('load', function() {
       'visibility': 'none'
       },
     'paint' : {
-      'line-color':'#e31a1c',
+      'line-color':'#9d44b5',
       'line-opacity':1.0,
       'line-width' : 2,
       
@@ -153,7 +154,7 @@ map.on('load', function() {
       'visibility': 'none'
       },
     'paint' : {
-      'line-color':'#757575',
+      'line-color':'#6d715c',
       'line-opacity':1.0,
       'line-width' : 2
     }
@@ -194,20 +195,35 @@ map.on('load', function() {
   })
 });
 
-var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline'];//, 'Proposed Bike Lanes'
+
+var layerList = document.getElementById('toggle');
+var inputs = layerList.getElementsByTagName('input');
+ 
+function switchLayer(layer) {
+  var layerId = layer.target.id;
+  console.log(layerId);
+  map.setStyle('mapbox://styles/moxyped/' + layerId);
+ }
+ 
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].onclick = switchLayer;
+  
+}
+
+var toggleableLayerIds = [ 'Unprotected Bike Lanes', 'Protected Bike Lanes','Accelerated Plan for Safer Streets','Beltline', 'Proposed Bike Lanes'];//
  
 var link = document.createElement('a');
 link.textContent = 'Layers';
 var layers = document.getElementById('menu');
 layers.appendChild(link);
 
-var colors = ['#fdbf6f', '#757575', '#3aaed8', '#5cb477'];
+var colors = ['#fdbf6f', '#6d715c', '#f6f7f5', '#373d20', '#9d44b5'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
  
   
   var id = toggleableLayerIds[i]; 
-  
+  console.log(id);
   var link = document.createElement('a');
   link.href = '#';
   link.textContent = id;

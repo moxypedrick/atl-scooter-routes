@@ -14,8 +14,19 @@ h2 {
   font-size: .8em;
 }
 
+#toggle {
+  position: absolute;
+  left: 40vw;
+  bottom: 0vh;
+  z-index: 1;
+  background: #fff;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  }
+
+
   #menu {
-    background: #fff;
+    background-color: #fff;
     position: absolute;
     z-index: 1;
     top: 5vh;
@@ -395,6 +406,17 @@ a:hover {
 @media only screen and (max-width:930px) {
  /* For mobile phones: */
  
+ #toggle {
+  position: absolute;
+  left: 25vw;
+  top: 65vh;
+  z-index: 1;
+  background: #fff;
+  
+  font-family: 'Open Sans', sans-serif;
+  }
+
+
  .map-overlay {
   position: absolute;
   top: 2vh;
@@ -454,7 +476,7 @@ h1 {
 }
   
  #menu {
-    background: #fff;
+    background-color: #c0c0c0;
     position: fixed;
     z-index: -1;
     top: 100vh;
@@ -467,9 +489,10 @@ h1 {
   #menu2 {
     background: #fff;
     position: absolute;
+    background-color: #c0c0c0;
     z-index: 1;
     height: 24vh;
-    width: 100vw;
+    width: 95vw;
     border-radius: 1px;
     border: 1px solid rgba(0,0,0,0.4);
     font-family: 'Open Sans', sans-serif;
@@ -479,7 +502,7 @@ h1 {
     font-size: 13px;
     color: #404040;
     display: block;
-    height: 6vh;
+    height: 4.8vh;
     width: 95vw;
     text-decoration: none;
     border: 1px solid rgba(0,0,0,0.25);
