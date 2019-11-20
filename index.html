@@ -24,17 +24,45 @@
 
       <div id='listings' class='listings'>
         <div class='item' id='listing-0'>
-            <p>Over the course of 16 days, we recorded the idle location of every 
-              e-scooter in the Atlanta area. Using this data we created a database of 
-            every e-scooter trip that occurred. We utilized the HERE.com bike routing API
-            to determine the likely route traveled on each trip. Then each route was assigned to a street segement 
-            to determine which streets are used most frequently with shared e-scooters. 
+            <p>The use of e-scooters in Atlanta and subsequent devastating crashes have prompted the 
+              City to announce a <a href="https://www.atlantaga.gov/government/mayor-s-office/executive-offices/mklb-press-kit" target="blank" style="color:rgb(8, 23, 241);"s>program</a> 
+              to rapidly install safety improvements for bikes, scooters, and pedestrians.
+              We wanted to determine if the location of these safety improvements aligned with current e-scooter use.  
+            </p><p>Over the course of 16 days, we recorded the idle location of every e-scooter in the Atlanta area. Using this data we created a database of 
+            every e-scooter trip and its likely route using the HERE Bike Routing API. Then each route was assigned to a street segement 
+            to determine which streets e-scooters are most frequently routed. 
           </p><p>
-            This data is a visualization of the frequency of e-scooter use on each road segment 
-            in Atlanta. We also provide the existing and planned light-individual-transportation 
-            lanes to juxtapose planned infrastructure and current e-scooter use. Hopefully, this will help 
-            inform decision makers of where to implement accelerated 
-            LIT lane infrastructure to maximize e-scooter safety. </p><p>
+            We found that most freuquently used street segements were: 
+            <ul>
+              <li>Peachtree Street NE</li>
+              <li>Centennial Olympic Park Drive NW</li>
+              <li>Luckie Street NW</li>
+              <li>Marietta Street NW</li>
+              <li>Decatur Street SE</li>
+              <li>Juniper Street NE</li>
+              <li>Glen Iris Drive NE</li>
+              <li>John Portman Blvd NE</li>
+              <li>Auburn Avenue NE</li>
+              <li>Edgewood Avenue NE</li>
+            </ul>This visualization shows frequency of e-scooter use on each road segment in Atlanta juxtaposed with 
+            the existing and planned light-individual-transportation. It shows that the following street segments likely see
+            high e-scooter use but do not have planned safety improvements. 
+            <ul>
+              <li>Ponce de Leon Avenue NE</li>
+              <li>Marietta Street NW</li>
+              <li>Peachtree Street NE</li>
+              <li>Edgewood Avenue NE</li>
+              <li>Ted Turner Drive NW</li>
+              <li>Luckie Street NW</li>
+              <li>Linden Avenue NE</li>
+              <li>7th Street NE</li>
+              <li>11th Street NE</li>
+              <li>Glen Iris Drive NE</li>
+            </ul> Because, in general, navigation services are used to determine travel routes
+            these streets are seeing e-scooter use and should be considered for safety improvements.
+          </p><p>
+            This visualization was created for Georgia Institute of Technology's CEE 6602 Urban Transportation Planning
+             by <a href="https://github.com/moxypedrick" target="blank" style="color:rgb(8, 23, 241);">David Pedrick</a>.   
             The data visualized was observed between October 16th and November 1, 2019. The data was recorded from 4am to 9:30 pm, 
             reflecting the Atlanta's nighttime curfew. During data collection, we experienced an internet outage on 
             October 22, so these data are missing. Additionaly, data collection for Lyft and Lime scooters was not captured due 
